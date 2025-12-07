@@ -1,0 +1,66 @@
+import express from 'express';
+import { SessionService, SessionRequest } from './session.service';
+
+const app = express();
+const port = 3000;
+const sessionService = new SessionService();
+
+app.use(express.json());
+
+// Health check
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', service: 'GameGuardian API' });
+});
+
+// Iniciar sesión supervisada
+app.post('/api/sessions/start', async (req, res) => {
+  try {
+    const request: SessionRequest = req.body;
+    
+    // Validaciones básicas
+    if (!request.adultId || !request.childId) {
+      return res.status(400).json({ error: 'adultId y childId son requeridos' });
+    }
+
+    const session = await sessionService.startSupervisedSession(request);
+    
+    res.status(201).json({
+      success: true,
+      sessionId: session.id,
+      message: 'Sesión creada. Esperando autorización de padres.',
+      nextSteps: [
+        'Los padres recibieron notificación',
+        'El niño debe aceptar la invitación',
+        'La sesión comenzará cuando ambos autoricen'
+      ]
+    });
+  } catch (error: any) {
+    res.status(500).json({ 
+      success: false, 
+      error: error.message 
+    });
+  }
+});
+
+// Obtener estado de sesión
+app.get('/api/sessions/:sessionId', (req, res) => {
+  // Implementar
+  res.json({ message: 'Endpoint en desarrollo' });
+});
+
+// Finalizar sesión
+app.post('/api/sessions/:sessionId/end', (req, res) => {
+  // Implementar
+  res.json({ message: 'Endpoint en desarrollo' });
+});
+
+// Dashboard para padres - obtener sesiones de un niño
+app.get('/api/parent/children/:childId/sessions', (req, res) => {
+  // Implementar
+  res.json({ message: 'Endpoint en desarrollo' });
+});
+
+app.listen(port, () => {
+  console.log(`🚀 GameGuardian API ejecutándose en http://localhost:${port}`);
+  console.log(`📋 Health check: http://localhost:${port}/health`);
+});
