@@ -8,10 +8,10 @@ https://img.shields.io/badge/Node.js-18+-339933.svg
 El Problema Real
 Los videojuegos actuales (Roblox, Fortnite, Minecraft) tienen un vacío crítico de seguridad:
 
-✅ Saben si un usuario es adulto o niño
-❌ Pero NO controlan qué adulto interactúa con qué niño
-❌ No supervisan el contexto de las interacciones
-❌ Alertas reactivas, no prevención proactiva
+Saben si un usuario es adulto o niño
+Pero NO controlan qué adulto interactúa con qué niño
+No supervisan el contexto de las interacciones
+Alertas reactivas, no prevención proactiva
 
 Resultado: Adultos verificados pueden interactuar libremente con cualquier niño sin supervisión.
 
