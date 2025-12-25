@@ -1,4 +1,4 @@
-# 🔌 Integración con Roblox
+# Integración con Roblox
 
 ## Flujo de trabajo
 
