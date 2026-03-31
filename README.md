@@ -2,6 +2,10 @@
 
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
+<img width="191" height="20" alt="image" src="https://github.com/user-attachments/assets/ad0b6bf3-dac8-4c98-9d01-1b7c9489d064" />
+
+
+
 **Sistema de seguridad contextual para proteger a niños en videojuegos online.**
 
 GameGuardian Context añade la capa de contexto que falta en las plataformas de videojuegos: no solo verifica si un usuario es adulto, sino que controla **qué adulto interactúa con qué niño**, **por cuánto tiempo**, y **con qué supervisión**.
